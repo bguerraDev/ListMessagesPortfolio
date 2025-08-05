@@ -1,10 +1,12 @@
 # 📱 ListMessagesPortfolio
 
-Aplicación Android nativa desarrollada con **Jetpack Compose** para visualizar mensajes almacenados en Firestore. Incluye autenticación con token JWT desde un backend en Django y un diseño moderno con soporte para modo oscuro. USO exclusivo para bguerradev-portfolio.
+📘 [Read this in Spanish](README.es.md)
+
+Native Android app built with **Jetpack Compose** to visualize messages stored in Firestore. It includes JWT authentication via a Django REST backend and a modern design with dark mode support. Used exclusively for the bguerraDev Portfolio
 
 ---
 
-## 🛠️ Tecnologías Usadas
+## 🛠️ Tech Stack
 
 ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
 ![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white)
@@ -15,49 +17,49 @@ Aplicación Android nativa desarrollada con **Jetpack Compose** para visualizar 
 
 ---
 
-## 🧱 Arquitectura
+## 🧱 Architecture
 
 - **MVVM (Model-View-ViewModel)** 📐
-- **Repository Pattern** para desacoplar lógica de red
-- **Jetpack Navigation** para navegación entre pantallas
-- **Jetpack Compose** para UI declarativa
-- **DataStore Preferences** para manejo del token JWT
+- **Repository Pattern** for clean data access
+- **Jetpack Navigation** for screen transitions
+- **Jetpack Compose** for declarative UI
+- **DataStore Preferences** for JWT persistence
 
 ---
 
-## 🔐 Flujo de Autenticación
+## 🔐 Auth Flow
 
-1. El usuario introduce `nombre de usuario` y `contraseña`.
-2. Se hace una petición a `/api/login/` del backend (Django).
-3. Si es correcto, se guarda el token JWT localmente.
-4. Con ese token se consulta `/api/messages/`.
-
----
-
-## 🧾 Funcionalidades
-
-- 🔐 Login con JWT + Firestore
-- 📄 Listado de mensajes
-- 🔍 Búsqueda por texto, nombre o fecha
-- 🔃 Orden ascendente/descendente
-- 🌒 Modo claro/oscuro
-- 🎯 Logout con redirección segura
-- 🧊 Shimmer Placeholder en carga
-- ⬇️ Flecha para desplegar mensaje
+1. User enters `username` and `password`.
+2. App sends a request to `/api/login/` in the Django backend.
+3. On success, a JWT token is saved locally.
+4. The app then requests `/api/messages/` using the token.
 
 ---
 
-## 📦 Estructura de Carpetas
+## 📄 Features
+
+- 🔐 JWT Login + Firestore Integration
+- 📜 Messages list with sender & timestamp
+- 🔍 Search by content, name or date
+- 🔃 Ascending/Descending sorting
+- 🌙 Dark/Light theme support
+- 🚪 Secure logout with navigation
+- 🧊 Shimmer loading placeholder
+- 📩 Toggleable message content
+
+---
+
+## 🗂️ Project Structure
 
 ```bash
 ├── data
-│   ├── domain.model (Modelos)
-│   ├── network (Retrofit + API)
-│   └── repository (Lógica de acceso)
+│   ├── domain.model        # Models (Message, LoginRequest...)
+│   ├── network             # Retrofit + API interface
+│   └── repository          # Repository layer
 ├── ui
-│   ├── login (Pantalla de login)
-│   ├── messages (Listado de mensajes)
-│   ├── common (Componentes reutilizables)
-│   └── theme (Tema claro/oscuro)
-├── utils (Helpers y constantes)
-└── MainActivity.kt
+│   ├── login               # Login screen and logic
+│   ├── messages            # Messages screen and logic
+│   ├── common              # Reusable UI components
+│   └── theme               # Compose theme config
+├── utils                   # Helpers and constants
+└── MainActivity.kt         # Entry point
