@@ -1,0 +1,55 @@
+# --- ANDROID / INTELLIJ ---
+*.iml
+.gradle
+/local.properties
+/.idea/
+/build/
+/captures/
+/.externalNativeBuild/
+/.cxx/
+/output.json
+*.hprof
+
+# --- KOTLIN ---
+*.class
+*.kt.bak
+*.kts.bak
+
+# --- COMPOSE / RENDERED FILES ---
+**/composePreview/
+**/*.preview.png
+
+# --- OS & MISC ---
+.DS_Store
+Thumbs.db
+
+# --- LOGS / CACHES ---
+*.log
+*.tmp
+*.swp
+*.swo
+
+# --- TEST OUTPUT ---
+/test-results/
+/androidTest-results/
+/coverage/
+/*.ec
+
+# --- ARTIFACTS ---
+*.apk
+*.ap_  # Android package resource files
+*.aar  # Android library packages
+
+# --- GRADLE WRAPPER FILES ---
+**/gradle-wrapper.jar
+**/gradle-wrapper.properties
+
+# --- NODE / WEB (por si se usa webview o integración JS) ---
+node_modules/
+npm-debug.log
+
+# --- LIBS VERSIONING (no necesario trackear binarios) ---
+/app/libs/
+
+# --- KOTLIN SYMBOL PROCESSING (KSP) ---
+.ksp/

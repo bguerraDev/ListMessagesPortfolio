@@ -1,0 +1,6 @@
+package com.bryanguerra.listmessagesportfolio.data.domain.model
+
+data class LoginRequest(
+    val username: String,
+    val password: String
+)
